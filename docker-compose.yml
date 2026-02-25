@@ -1,0 +1,60 @@
+services:
+
+  # ── Redis ─────────────────────────────────────────────────────────────────
+  redis:
+    image: redis:7-alpine
+    container_name: redis
+    ports:
+      - "6379:6379"
+    command: redis-server --save 60 1
+    networks:
+      - ratelimiter-network
+
+  # ── Spring Boot Instance A ────────────────────────────────────────────────
+  service1:
+    build: ./service
+    container_name: service1
+    environment:
+      - SPRING_DATA_REDIS_HOST=redis
+      - SPRING_DATA_REDIS_PORT=6379
+      - SERVER_PORT=8080
+    ports:
+      - "8080:8080"
+    depends_on:
+      - redis
+    networks:
+      - ratelimiter-network
+
+  # ── Spring Boot Instance B ────────────────────────────────────────────────
+  # Same image, different container — simulates multi-server deployment
+  service2:
+    build: ./service
+    container_name: service2
+    environment:
+      - SPRING_DATA_REDIS_HOST=redis
+      - SPRING_DATA_REDIS_PORT=6379
+      - SERVER_PORT=8081
+    ports:
+      - "8081:8080"
+    depends_on:
+      - redis
+    networks:
+      - ratelimiter-network
+
+  # ── Nginx ─────────────────────────────────────────────────────────────────
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - service1
+      - service2
+    networks:
+      - ratelimiter-network
+
+networks:
+  ratelimiter-network:
+    driver: bridge
