@@ -1,0 +1,24 @@
+# Maven build output
+service/target/
+
+# Node modules and build output
+sdk/node_modules/
+sdk/dist/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Environment files
+.env
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
