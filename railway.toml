@@ -1,7 +1,6 @@
 [build]
 builder = "dockerfile"
-dockerfilePath = "service/Dockerfile"
-dockerContext = "service"
+dockerfilePath = "Dockerfile"
 
 [deploy]
 healthcheckPath = "/actuator/health"
