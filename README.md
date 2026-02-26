@@ -9,6 +9,16 @@ A production-grade distributed rate limiting service built with Spring Boot, Red
 ![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?style=flat-square)
 
 ---
+## Live Demo
+
+Base URL: `https://distributed-rate-limiter-production-82bf.up.railway.app`
+
+\```bash
+# Try it right now
+curl -X POST https://distributed-rate-limiter-production-82bf.up.railway.app/api/v1/keys \
+  -H "Content-Type: application/json" \
+  -d '{"algorithm":"sliding_window","limit":5,"windowSeconds":30}'
+\```
 
 ## What This Project Does
 
