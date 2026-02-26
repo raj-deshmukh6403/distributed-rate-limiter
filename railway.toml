@@ -1,0 +1,9 @@
+[build]
+builder = "dockerfile"
+dockerfilePath = "service/Dockerfile"
+dockerContext = "service"
+
+[deploy]
+healthcheckPath = "/actuator/health"
+healthcheckTimeout = 60
+restartPolicyType = "on_failure"
