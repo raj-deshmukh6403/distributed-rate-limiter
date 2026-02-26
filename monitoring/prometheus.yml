@@ -1,0 +1,21 @@
+global:
+  scrape_interval: 15s      # scrape metrics every 15 seconds
+  evaluation_interval: 15s
+
+scrape_configs:
+
+  # Scrape service1 directly
+  - job_name: 'rate-limiter-service1'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['service1:8080']
+        labels:
+          instance: 'service1'
+
+  # Scrape service2 directly
+  - job_name: 'rate-limiter-service2'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['service2:8080']
+        labels:
+          instance: 'service2'
