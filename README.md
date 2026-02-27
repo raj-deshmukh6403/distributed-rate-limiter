@@ -339,7 +339,7 @@ distributed-rate-limiter/
 
 ---
 
-## Interview Talking Points
+## Key Points
 
 **Distributed systems:** "Used Redis Lua scripts for atomic operations — ZREMRANGEBYSCORE and ZADD execute as one indivisible operation, preventing race conditions under concurrent load."
 
@@ -355,7 +355,7 @@ distributed-rate-limiter/
 
 ## About the Author
 
-**Raj Vardhan Deshmukh**
+**RajVardhan Deshmukh**
 
 - GitHub: [@raj-deshmukh6403](https://github.com/raj-deshmukh6403)
 - npm: [@rajvardhan6403](https://www.npmjs.com/~rajvardhan6403)
