@@ -355,7 +355,7 @@ distributed-rate-limiter/
 
 ## About the Author
 
-**RajVardhan Deshmukh**
+**Rajvardhan Deshmukh**
 
 - GitHub: [@raj-deshmukh6403](https://github.com/raj-deshmukh6403)
 - npm: [@rajvardhan6403](https://www.npmjs.com/~rajvardhan6403)
@@ -374,5 +374,6 @@ If you found this useful:
 ---
 
 ## License
+
 
 MIT — free to use, modify, and distribute.
