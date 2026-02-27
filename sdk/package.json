@@ -1,6 +1,6 @@
 {
   "name": "@rajvardhan6403/rate-limiter-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "SDK for Distributed Rate Limiter as a Service",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
